@@ -39,7 +39,6 @@
     function Renderbutton({runs,setRuns}){
         return(
             <>
-
             <button className="btn" onClick={()=>{setRuns(runs+4)}}>Increase runs by 4</button>
             <br/>
             <br/>
@@ -52,6 +51,7 @@
             </>
         )
     }
+    
     function CricketScoreBoard(){
         const [runs, setRuns] = React.useState(0)
         const [wickets, setWickets] = React.useState(0)
@@ -63,7 +63,7 @@
                 {wickets < 10 ? (
                     <Renderbutton runs={runs} setRuns={setRuns}/>
                 ):(
-                    <h2>Match is over</h2>
+                    <h2>Match is over and you score is {wickets}</h2>
                 )}
                 
                 <button disabled={wickets==10 ? true :false} className="btn" onClick={()=>wickets < 10  && setWickets(wickets+1)}>Update Wicket</button>
