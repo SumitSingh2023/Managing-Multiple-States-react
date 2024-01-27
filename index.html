@@ -9,8 +9,11 @@
             text-align: center;
             margin: auto;
             border: 2px solid blue;
-            width: 200px;
+            width: 220px;
             padding: 50px;
+            background-color: black;
+            color: aqua;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .btn{
@@ -55,6 +58,8 @@
     function CricketScoreBoard(){
         const [runs, setRuns] = React.useState(0)
         const [wickets, setWickets] = React.useState(0)
+
+       
          
         return(
             <div className="scoreboard">
@@ -63,7 +68,8 @@
                 {wickets < 10 ? (
                     <Renderbutton runs={runs} setRuns={setRuns}/>
                 ):(
-                    <h2>Match is over and you score is {wickets}</h2>
+                    <h2>Match is over! well played. {runs} / {wickets}</h2>
+                   
                 )}
                 
                 <button disabled={wickets==10 ? true :false} className="btn" onClick={()=>wickets < 10  && setWickets(wickets+1)}>Update Wicket</button>
